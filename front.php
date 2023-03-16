@@ -21,6 +21,9 @@ function getIp(): string {
  * @return string
  */
 function getCityByIp(): string {
+//    Для API варианта
+//    $ip = $_POST['user']['ip'] ?? exit("Не удалось получить ip");
+
     $ip = getIp();
     $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}"));
 
