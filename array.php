@@ -4,10 +4,12 @@ $randArr = [];
 $numRows = 5;
 $numCols = 7;
 
+$rangeArr = range(1, 1000);
+shuffle($rangeArr);
+$rangeArr = array_slice($rangeArr, 0, $numRows * $numCols);
+
 for ($i = 0; $i < $numRows; $i++) {
-    for ($j = 0; $j < $numCols; $j++) {
-        $randArr[$i][$j] = rand(1, 1000);
-    }
+    $randArr[$i] = array_slice($rangeArr, $i * $numCols, $numCols);
 }
 
 $colSumArr = [];
